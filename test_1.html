@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue的常用指令</title>
+</head>
+<body>
+    <div id="app">
+       <!-- <p v-if="show">要显示出来</p>&lt;!&ndash; v-if条件渲染，里面是表达式 &ndash;&gt;
+        <p v-if="false">不要显示出来</p>
+        <p v-if="height>1.55">小妹身高：{{height}}m</p>
+        <p v-if="height1>1.55">小妹身高：{{height}}m</p>
+-->
+
+        <!--<p v-show="show">要显示出来</p>&lt;!&ndash; v-show条件渲染，代码有构建出来，只是display了，里面是表达式 &ndash;&gt;
+        <p v-show="false">不要显示出来</p>
+        <p v-show="height>1.55">小妹身高：{{height}}m</p>
+        <p v-show="height1>1.55">小妹身高：{{height}}m</p>
+-->
+        <!--<p v-else="height>1.7">小妹身高：{{height}}m</p>  &lt;!&ndash; v-else不能单独使用，编译错误 [Vue warn]: Error compiling template: &ndash;&gt;-->
+        <p v-if="height>1.7">小妹身高：{{height}}m</p>
+        <p v-else>小妹身高：{{height}}m</p>     <!--  if  ,else得结合一起使用 -->
+
+        <p>输入的成绩对应的等级是：</p>
+        <p v-if="score>=90">优秀</p>
+        <p v-else-if="score>=75">良好</p>
+        <p v-else-if="score>=60">及格</p>
+        <p v-else>不及格</p>
+        <input type="text" v-model="score">
+
+
+        <p v-for="(score,index) in scores"> <!-- v-for里可是对象，数组，字符-->
+            {{index + ':' + score}}
+        </p>
+        <p v-for="d in dog">
+            {{d}}
+        </p>
+        <p v-for="str in name">
+            {{str}}
+        </p>
+        <p v-for="a in dig">
+            {{a}}
+        </p>
+
+        <!--<p>{{msg}}</p>
+
+        <p v-once>原始值：{{message}}</p>
+        <p>后面的：{{message}}</p>
+        <input type="text" v-model="message">  &lt;!&ndash;v-model双向绑定&ndash;&gt;
+-->
+
+
+
+    </div>
+
+<script src="js/vue.js"></script>
+<script src="js/testPro.js"></script>
+</body>
+</html>

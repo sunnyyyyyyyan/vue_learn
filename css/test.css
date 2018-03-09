@@ -1,0 +1,17 @@
+table{
+    width: 600px;
+    border: 1px solid brown;
+    text-align: center;
+}
+thead{
+    background: orangered;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+.active{
+    background-color: orangered;
+    font-size: 20px;
+    color: #ffffff;
+}

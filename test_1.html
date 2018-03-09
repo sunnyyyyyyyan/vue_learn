@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>vue的常用指令</title>
+    <link href="css/test.css" rel="stylesheet">
 </head>
 <body>
     <div id="app">
+        <!--<p>{{msg}}</p>
+
+                <p v-once>原始值：{{message}}</p>
+                <p>后面的：{{message}}</p>
+                <input type="text" v-model="message">  &lt;!&ndash;v-model双向绑定&ndash;&gt;
+        -->
+
+
        <!-- <p v-if="show">要显示出来</p>&lt;!&ndash; v-if条件渲染，里面是表达式 &ndash;&gt;
         <p v-if="false">不要显示出来</p>
         <p v-if="height>1.55">小妹身高：{{height}}m</p>
@@ -18,18 +27,18 @@
         <p v-show="height1>1.55">小妹身高：{{height}}m</p>
 -->
         <!--<p v-else="height>1.7">小妹身高：{{height}}m</p>  &lt;!&ndash; v-else不能单独使用，编译错误 [Vue warn]: Error compiling template: &ndash;&gt;-->
-        <p v-if="height>1.7">小妹身高：{{height}}m</p>
-        <p v-else>小妹身高：{{height}}m</p>     <!--  if  ,else得结合一起使用 -->
+<!--        <p v-if="height>1.7">小妹身高：{{height}}m</p>
+        <p v-else>小妹身高：{{height}}m</p>     &lt;!&ndash;  if  ,else得结合一起使用 &ndash;&gt;
 
         <p>输入的成绩对应的等级是：</p>
         <p v-if="score>=90">优秀</p>
         <p v-else-if="score>=75">良好</p>
         <p v-else-if="score>=60">及格</p>
         <p v-else>不及格</p>
-        <input type="text" v-model="score">
+        <input type="text" v-model="score">-->
 
 
-        <p v-for="(score,index) in scores"> <!-- v-for里可是对象，数组，字符-->
+ <!--       <p v-for="(score,index) in scores"> &lt;!&ndash; v-for里可是对象，数组，字符&ndash;&gt;
             {{index + ':' + score}}
         </p>
         <p v-for="d in dog">
@@ -40,16 +49,43 @@
         </p>
         <p v-for="a in dig">
             {{a}}
-        </p>
+        </p>-->
 
-        <!--<p>{{msg}}</p>
+       <!-- <table>
+            <thead>
+                <tr>
+                    <td>姓名</td>
+                    <td>年龄</td>
+                    <td>性别</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in persons">
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.sex}}</td>
+                </tr>
+            </tbody>
+        </table>-->
 
-        <p v-once>原始值：{{message}}</p>
-        <p>后面的：{{message}}</p>
-        <input type="text" v-model="message">  &lt;!&ndash;v-model双向绑定&ndash;&gt;
--->
+
+        <!--<p>{{msg}} sunny's head</p>
+        <p v-text="msg">hello</p>    &lt;!&ndash;  v-text是往标签里注入 msg ，把原来的hello 覆盖了 &ndash;&gt;
+        <div v-html="html"></div>    &lt;!&ndash;  v-html添加标签 &ndash;&gt;
 
 
+        <img v-bind:src="imgSrc" :alt="alt">
+        <img :src="imgSrc1" :alt="alt">
+
+        <p v-for="(li,index) in lips" :class="index===2?'active':''">
+            {{li}}
+        </p>-->
+
+
+        <p v-bind:style="{color:fontColor}">{{msg}}</p>
+        <button @click="changeContentColor()">改变字体颜色</button>
+        <button v-on:click="msg='changeTest'">改变内容</button>
+        <button @click="changeContent()">弹窗</button>
 
     </div>
 
